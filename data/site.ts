@@ -11,7 +11,7 @@ export const site = {
   phone: "+1 (249) 979-4922",
   github: "https://github.com/NayeemCseMu",
   linkedin: "https://www.linkedin.com/in/nayeem-islam-durjoy/",
-  resumeUrl: "/resume/Nayeemul-Islam-Resume.pdf",
+  resumeUrl: "/resume/Nayeemul-Data-Analyst-Resume.pdf",
   url: "https://nayeemulislam.dev",
   availability: "Open to Data Analytics, Data Engineering & Cloud opportunities",
   description:
