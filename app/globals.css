@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* Dark theme (default) */
+:root {
+  --background: #0a0b0d;
+  --surface: #111214;
+  --surface-2: #16181b;
+  --foreground: #f3f3f1;
+  --muted: #9a9ca3;
+  --muted-2: #6b6d74;
+  --border: #232529;
+  --border-strong: #2f3136;
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.12);
+  --accent-foreground: #04141a;
+  --success: #34d399;
+  --warning: #f5b969;
+
+  --cat-data-analytics: #22d3ee;
+  --cat-cloud: #60a5fa;
+  --cat-software-engineering: #a78bfa;
+  --cat-academic-research: #f472b6;
+  --cat-tools: #fb923c;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --background: #ffffff;
+  --surface: #f8f8f8;
+  --surface-2: #f0f0f0;
+  --foreground: #1a1a1a;
+  --muted: #666666;
+  --muted-2: #999999;
+  --border: #e0e0e0;
+  --border-strong: #d0d0d0;
+  --accent: #0891b2;
+  --accent-soft: rgba(8, 145, 178, 0.12);
+  --accent-foreground: #f0f9fb;
+  --success: #059669;
+  --warning: #d97706;
+
+  --cat-data-analytics: #0891b2;
+  --cat-cloud: #2563eb;
+  --cat-software-engineering: #7c3aed;
+  --cat-academic-research: #db2777;
+  --cat-tools: #c2410c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-cat-data-analytics: var(--cat-data-analytics);
+  --color-cat-cloud: var(--cat-cloud);
+  --color-cat-software-engineering: var(--cat-software-engineering);
+  --color-cat-academic-research: var(--cat-academic-research);
+  --color-cat-tools: var(--cat-tools);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas,
+    monospace;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.container-page {
+  width: 100%;
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2.5rem;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+}
+
+.card-hover {
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card-hover:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-2);
+}
+
+.card-spotlight {
+  position: relative;
+}
+
+.card-spotlight:hover {
+  border-color: color-mix(in srgb, var(--cat-color, var(--accent)) 45%, var(--border-strong));
+}
+
+.card-spotlight-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--cat-color, var(--accent)) 16%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.card-spotlight:hover .card-spotlight-glow {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-spotlight-glow {
+    display: none;
+  }
+}
+
+.card-featured {
+  border-color: var(--cat-color, var(--accent));
+  background: var(--surface);
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .card-featured {
+    border-color: color-mix(in srgb, var(--cat-color, var(--accent)) 35%, var(--border-strong));
+    background: radial-gradient(
+        640px circle at 12% -10%,
+        color-mix(in srgb, var(--cat-color, var(--accent)) 8%, transparent),
+        transparent 60%
+      ),
+      var(--surface);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .fade-in,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
