@@ -21,7 +21,7 @@ export default function Home() {
       <CareerEvolution />
       <FeaturedProject />
       <AnalyticsSection />
-      <CloudSection />
+      {/* <CloudSection /> */}
       <SoftwareEngineeringSection />
       <Skills />
       <Experience />

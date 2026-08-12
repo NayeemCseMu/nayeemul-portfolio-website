@@ -19,13 +19,14 @@ export default function Hero() {
           </h1>
 
           <p className="mt-4 text-xl sm:text-2xl text-foreground/90 font-medium text-balance">
-            Software Engineer building toward Data Analytics &amp; Cloud Computing
+            Software Engineer building toward Data Analytics &amp; Cloud
+            Computing
           </p>
 
           <p className="mt-5 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
-            I bring 3+ years of software engineering experience and a background in
-            computational science to build data-driven, analytical, and cloud-focused
-            solutions.
+            I bring 3+ years of software engineering experience and a background
+            in computational science to build data-driven, analytical, and
+            cloud-focused solutions.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -73,7 +74,7 @@ export default function Hero() {
               <Mail size={17} aria-hidden />
               Email
             </a>
-             <a
+            <a
               href={`phone:${site.phone}`}
               className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors"
             >
@@ -83,7 +84,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="lg:col-span-5 fade-in" style={{ animationDelay: "120ms" }}>
+        <div
+          className="lg:col-span-5 fade-in"
+          style={{ animationDelay: "120ms" }}
+        >
           <HeroPipeline />
         </div>
       </div>

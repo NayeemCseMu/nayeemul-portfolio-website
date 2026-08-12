@@ -9,7 +9,7 @@ export default function Skills() {
       <Reveal>
         <SectionHeading
           eyebrow="Technical Skills"
-          title="Organized by what it's used for, not a percentage bar."
+          title="Organized by what it's used for, Not a percentage bar." //improvise the text to make it more engaging and less generic
         />
       </Reveal>
 
