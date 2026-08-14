@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileDown, Mail, CircleDot, Phone } from "lucide-react";
 import { site } from "@/data/site";
@@ -85,10 +86,28 @@ export default function Hero() {
         </div>
 
         <div
-          className="lg:col-span-5 fade-in"
+          className="lg:col-span-5 fade-in flex flex-col items-center gap-6"
           style={{ animationDelay: "120ms" }}
         >
-          <HeroPipeline />
+          <div
+            className="h-40 w-40 rounded-full p-1"
+            style={{
+              background:
+                "linear-gradient(135deg, var(--accent), var(--accent-soft))",
+            }}
+          >
+            <Image
+              src="/profile.jpg"
+              alt={site.name}
+              width={160}
+              height={160}
+              priority
+              className="h-full w-full rounded-full object-cover border-4 border-background"
+            />
+          </div>
+          <div className="w-full">
+            <HeroPipeline />
+          </div>
         </div>
       </div>
     </section>
