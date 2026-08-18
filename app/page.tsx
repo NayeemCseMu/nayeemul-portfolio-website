@@ -1,5 +1,4 @@
-import Hero from "@/components/Hero";
-import QuickFacts from "@/components/QuickFacts";
+import ProfileCard from "@/components/ProfileCard";
 import About from "@/components/About";
 import CareerEvolution from "@/components/CareerEvolution";
 import FeaturedProject from "@/components/FeaturedProject";
@@ -15,8 +14,7 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <QuickFacts />
+      <ProfileCard />
       <About />
       <CareerEvolution />
       <FeaturedProject />

@@ -231,3 +231,157 @@ body {
   background: var(--border-strong);
   border-radius: 999px;
 }
+
+/* Profile card (Hero + QuickFacts) */
+.profile-card {
+  transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.2s ease-out, border-color 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.profile-card:hover {
+  border-color: var(--border-strong);
+}
+
+.profile-card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    620px circle at var(--mx, 50%) var(--my, 50%),
+    var(--accent-soft),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.profile-card:hover .profile-card-glow {
+  opacity: 1;
+}
+
+.profile-card-sheen {
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    color-mix(in srgb, var(--accent) 14%, transparent) 34%,
+    transparent 48%
+  );
+  background-size: 220% 220%;
+  animation: sheenSweep 2.2s ease-out 0.2s 1;
+}
+
+@keyframes sheenSweep {
+  0% {
+    background-position: 130% 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    background-position: -30% 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-item {
+  animation: cardReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes ringSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.avatar-ring-spin {
+  background: conic-gradient(
+    from 0deg,
+    var(--accent),
+    var(--cat-cloud),
+    var(--cat-software-engineering),
+    var(--accent)
+  );
+  animation: ringSpin 6s linear infinite;
+}
+
+.fact-tile {
+  position: relative;
+  border-radius: 0.875rem;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fact-tile:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px -16px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.fact-tile-icon {
+  transition: transform 0.25s ease;
+}
+
+.fact-tile:hover .fact-tile-icon {
+  transform: scale(1.15) rotate(-6deg);
+}
+
+.cta-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.cta-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.social-link svg {
+  transition: transform 0.25s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.15) translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-card {
+    transform: none !important;
+  }
+
+  .profile-card-sheen,
+  .avatar-ring-spin {
+    animation: none !important;
+  }
+
+  .reveal-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .fact-tile,
+  .fact-tile-icon {
+    transition: none !important;
+  }
+}

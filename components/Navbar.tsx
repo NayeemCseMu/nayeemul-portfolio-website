@@ -50,7 +50,7 @@ export default function Navbar() {
           href="/"
           className="font-semibold tracking-tight text-foreground hover:text-accent transition-colors"
         >
-          Nayeemul Islam
+          Nayeemul
         </Link>
 
         <nav className="hidden md:flex items-center gap-8" aria-label="Primary">

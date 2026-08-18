@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-2">
-          © {year} Nayeemul Islam. Built with Next.js, TypeScript &amp; Tailwind CSS.
+          © {year} Nayeemul Islam Durjoy. Built with Next.js, TypeScript &amp; Tailwind CSS.
         </div>
       </div>
     </footer>
