@@ -190,6 +190,83 @@ export const projects: Project[] = [
     demoNote: "Dashboard is a Power BI (.pbix) file in the repo — no hosted live version yet.",
   },
   {
+    slug: "olist-revenue-intelligence",
+    title: "Olist Revenue Intelligence",
+    category: "Data Analytics",
+    tier: "featured",
+    status: "Completed",
+    summary:
+      "End-to-end analytics on 99,441 orders from a Brazilian e-commerce marketplace — from raw CSVs through a relational warehouse and validated SQL analytics to a backtested demand forecast and a BI-ready dashboard mart.",
+    heroNote: "Python + SQLite → SQL analytics → forecasting → Power BI / Tableau",
+    problem:
+      "Derive business intelligence from two years (Sep 2016–Oct 2018) of transactional e-commerce data: where revenue is concentrated, who the customers are and how loyal they are, how delivery performance affects satisfaction, and whether near-term demand can be forecast reliably enough to plan around.",
+    data:
+      "The \"Brazilian E-Commerce Public Dataset by Olist\" from Kaggle — roughly 100,000 orders (96,478 analyzed) with transaction, customer, product, and review-level detail, spanning 74 product categories.",
+    method: [
+      "Cleaned and feature-engineered the raw CSVs in a Jupyter notebook (analysis.ipynb).",
+      "Modeled the cleaned data into a SQLite relational warehouse with 10 tables across two analytical grains.",
+      "Ran 23 automated data-quality validation checks before trusting any downstream analysis.",
+      "Answered the core business questions through nine standalone SQL analytics scripts.",
+      "Built an RFM analysis and K-means customer segmentation to identify high-value customers.",
+      "Benchmarked five forecasting models under rolling-origin validation and selected SARIMA for the 28-day demand forecast.",
+      "Built an opportunity-scoring layer to flag categories worth further investment.",
+      "Built a star-schema mart and dashboard builds for both Power BI (Windows) and Tableau Public (macOS-native).",
+    ],
+    technologies: [
+      "Python",
+      "Jupyter",
+      "SQLite",
+      "SQL",
+      "Power BI",
+      "Tableau",
+      "Git",
+    ],
+    kpis: [
+      { label: "Orders analyzed", value: "96.5K" },
+      { label: "Gross merchandise value", value: "R$15.42M" },
+      { label: "Avg. order value", value: "R$159.83" },
+      { label: "Forecast test WAPE", value: "27.7%" },
+    ],
+    sqlHighlights: [
+      "Which 10 of 74 product categories account for 62% of total revenue?",
+      "Segment customers via RFM (recency, frequency, monetary) and K-means clustering.",
+      "Does late delivery correlate with negative reviews, and by how much?",
+      "What share of revenue comes from repeat customers versus one-time buyers?",
+      "Score categories by growth opportunity for a prioritized investment shortlist.",
+    ],
+    results: [
+      "R$15.42M in gross merchandise value across 96,478 orders, at a R$159.83 average order value.",
+      "Revenue is highly concentrated: 62% comes from just 10 of 74 product categories.",
+      "Only a 3.0% repeat-customer rate — a 97% single-purchase base — with the top 16% of customers driving 29% of revenue.",
+      "Late deliveries correlate strongly with dissatisfaction: 54% negative reviews versus 9% on-time.",
+      "The SARIMA model, selected from a five-model benchmark via rolling-origin validation, produced a 28-day forecast with 27.7% test WAPE.",
+    ],
+    businessImpact: [
+      "The revenue concentration in 10 categories gives merchandising and marketing a clear, evidence-backed shortlist for where to focus spend.",
+      "A 3% repeat-purchase rate against a 29%-of-revenue top-16%-of-customers finding points squarely at retention as the highest-leverage lever, not acquisition.",
+      "The late-delivery-to-negative-review correlation gives operations a quantified case for investing in delivery reliability over other satisfaction levers.",
+      "A validated 28-day demand forecast gives planning a concrete, backtested number to work from rather than a gut estimate.",
+    ],
+    challenges: [
+      "The dataset has no cost, margin, inventory, or price-variation data, which rules out any profit or price-elasticity analysis — a limitation documented up front rather than glossed over.",
+      "Reviews are self-selected and the final calendar periods in the dataset are incomplete, both of which needed to be accounted for before trusting the headline numbers.",
+      "Selecting a forecasting model required a proper five-model benchmark under rolling-origin validation rather than picking one model and assuming it would generalize.",
+    ],
+    learnings: [
+      "Running 23 automated data-quality checks before any analysis caught issues that would otherwise have silently biased the revenue and retention numbers.",
+      "Rolling-origin validation, not a single train/test split, was necessary to trust the forecast model choice on time-series data.",
+    ],
+    futureImprovements: [
+      "Incorporate cost and margin data if it becomes available, to move from revenue to profit-based prioritization.",
+      "Extend the forecast beyond 28 days and evaluate performance across more seasonal cycles.",
+      "Deploy the Power BI and Tableau builds to hosted, shareable links rather than build-from-scratch guides.",
+    ],
+    github: "https://github.com/NayeemCseMu/olist-revenue-intelligence",
+    demo: "",
+    demoNote:
+      "Power BI (Windows) and Tableau Public (macOS) dashboard builds are included in the repo with setup guides — no hosted live link yet.",
+  },
+  {
     slug: "cloud-analytics-pipeline",
     title: "Cloud Deployment for the Customer Analytics Pipeline",
     category: "Cloud",

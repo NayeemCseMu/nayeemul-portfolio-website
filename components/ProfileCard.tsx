@@ -81,16 +81,15 @@ export default function ProfileCard() {
               className="reveal-item mt-4 text-xl sm:text-2xl text-foreground/90 font-medium text-balance"
               style={{ animationDelay: "140ms" }}
             >
-              Software Engineer building toward Data Analytics &amp; Cloud
-              Computing
+              Data & Business Analytics  |  Cloud Solutions
             </p>
 
             <p
-              className="reveal-item mt-5 max-w-xl text-base sm:text-lg text-muted leading-relaxed"
+              className="reveal-item mt-5 max-w-xl text-base sm:text-lg text-muted leading-relaxed text=justify text-balance"
               style={{ animationDelay: "200ms" }}
             >
-              I bring 3+ years of software engineering experience and a background
-              in computational science to build data-driven, analytical, and
+              I bring 4+ years of software engineering experience and a background
+              in computer science to build data-driven, analytical, and
               cloud-focused solutions.
             </p>
 
