@@ -2,7 +2,7 @@
 // path here — the rest of the app reads from this single source of truth.
 
 export const site = {
-  name: "Nayeemul Islam",
+  name: "Nayeemul Islam Durjoy",
   shortName: "Nayeem",
   title: "Software Engineer | Data Analytics | Cloud Computing",
   altPositioning: "Software Engineer transitioning into Data Analytics & Cloud Computing",
@@ -15,7 +15,7 @@ export const site = {
   url: "https://nayeemulislam.dev",
   availability: "Open to Data Analytics, Data Engineering & Cloud opportunities",
   description:
-    "Portfolio of Nayeemul Islam, a software engineer with 3+ years of experience building applications and a current focus on data analytics, cloud computing, and data-driven solutions.",
+    "Portfolio of Nayeemul, a software engineer with 3+ years of experience building applications and a current focus on data analytics, cloud computing, and data-driven solutions.",
 } as const;
 
 export const navLinks = [

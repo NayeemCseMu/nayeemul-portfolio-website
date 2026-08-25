@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   description: site.description,
   keywords: [
-    "Nayeemul Islam",
+    "Nayeemul Islam Durjoy",
     "Software Engineer",
     "Data Analyst",
     "Data Analytics",
